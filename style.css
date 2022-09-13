@@ -37,10 +37,7 @@ h1 {
     justify-content: center;
 }
 
-.logout {
-    display: flex;
-    justify-content: center;
-    padding: 22px;
-    background-color: #333;
-    color: #fff;
+.loginstatus {
+  display: flex;
+  justify-content: end;
 }

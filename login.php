@@ -15,11 +15,12 @@ if (isset($_POST['username']) && ($_POST['password'])) {
                     $_SESSION["user_id"] = $row['id'];
                     $_SESSION["username"] = $row['username'];
                 } else {
-                    echo "Wachtwoord niet gevonden!";
+                    echo '<script>alert("Wachtwoord niet gevonden!")</script>';
                 }
             }
         } else {
-            echo "Gebruiker niet gevonden!";
+            sleep(3);
+            echo '<script>alert("Gebruiker niet gevonden!")</script>';
         }
     }
 }
