@@ -1,13 +1,12 @@
 <?php
 include "connection.php";
-if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username'])
-    && ($_POST['email']) && ($_POST['password'])) {
+if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username']) && ($_POST['email']) && ($_POST['password'])) {
     $first_name =  $_POST['first_name'];
     $last_name =  $_POST['last_name'];
     $username =  $_POST['username'];
     $email =  $_POST['email'];
     $password =  $_POST['password'];
-    $user = "INSERT INTO `user`(first_name, last_name, username, email, password)
+    $user = "INSERT INTO `user` (first_name, last_name, username, email, 'password')
         VALUES ('$first_name', '$last_name', '$username', '$email', '$password')";
     header("location: login.php");
     if ($conn->query($user) === FALSE) {
