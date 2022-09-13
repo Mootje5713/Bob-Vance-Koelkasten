@@ -6,7 +6,7 @@ if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username'])
     $username =  $_POST['username'];
     $email =  $_POST['email'];
     $password =  $_POST['password'];
-    $user = "INSERT INTO `user` (first_name, last_name, username, email, 'password')
+    $user = "INSERT INTO `user` (first_name, last_name, username, email, password)
         VALUES ('$first_name', '$last_name', '$username', '$email', '$password')";
     header("location: login.php");
     if ($conn->query($user) === FALSE) {
