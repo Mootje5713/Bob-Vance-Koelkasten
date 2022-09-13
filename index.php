@@ -1,16 +1,16 @@
-<?php 
+<?php
+include "connection.php";
+?>
+<?php
 
-if (!empty($_GET)) {
-    $post = $_GET['p'];
-    $cat = $_GET['cat'];
-}
-
-if (empty($post) && empty($cat)) {
-    echo "home";
-} elseif(!empty($post)) {
-    echo "single";
-} elseif (!empty($post)) {
-    echo "cat";
-}
+include "header.php";
 
 ?>
+
+<body>
+    <p>Op deze webiste zijn hier allerlei koelkasten te vinden.
+        Ook kan je koelkasten bestellen en laten reparen 
+    </p>
+</body>
+
+</html>
