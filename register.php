@@ -31,7 +31,7 @@ include "header.php";
     <br>
     email <input type="text" name="email" id="email" required>
     <br>
-    password <input type="password" name="wachtwoord" id="wachtwoord" required>
+    password <input type="password" name="password" id="password" required>
     <br>
     <input type="submit" name="submit" value="sign up">
 </form>
