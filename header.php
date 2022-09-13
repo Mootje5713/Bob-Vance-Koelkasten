@@ -11,8 +11,8 @@
 
 <body>
     <h1>Welkom op de webiste van Bob Vance</h1>
-    <div class="login">
-        <a href="login.php">Login</a>
+    <div class="logout">
+        <a href="logout.php">logout</a>
     </div>
     <div class="topnav">
         <a href="index.php">Home</a>
