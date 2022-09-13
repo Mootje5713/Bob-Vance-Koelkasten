@@ -29,7 +29,7 @@ $conn->close();
 
 <body>
     <h1>Welkom op de webiste van Bob Vance</h1>
-
+    <a href="login.php">Terug</a>
     <form action="" method="POST">
         firstname <input type="text" name="first_name" id="first_name" required>
         <br>
