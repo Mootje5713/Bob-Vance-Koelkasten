@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <p>Hallo! <?php echo $_SESSION['username']; ?> <a href="logout.php">logout</a></p>
+    <p>Hallo! <?php echo $_SESSION['username']; ?> &nbsp; <a href="logout.php">logout</a> </p>
     <h1>Welkom op de webiste van Bob Vance</h1>
     <div class="topnav">
         <a href="index.php">Home</a>
