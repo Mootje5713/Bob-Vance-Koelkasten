@@ -11,7 +11,6 @@ if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username'])
     header("location: login.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
-    } else {
     }
 }
 $conn->close();
@@ -37,7 +36,7 @@ $conn->close();
         <br>
         username <input type="text" name="username" id="username" required>
         <br>
-        email <input type="text" name="email" id="email" required>
+        email <input type="email" name="email" id="email" required>
         <br>
         password <input type="password" name="password" id="password" required>
         <br>

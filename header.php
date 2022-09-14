@@ -13,8 +13,9 @@
     <p>Hallo! <?php echo $_SESSION['username']; ?> &nbsp; <a href="logout.php">logout</a> </p>
     <h1>Welkom op de webiste van Bob Vance</h1>
     <div class="topnav">
-        <a href="index.php">Home</a>
-        <a href="about-us.php">About</a>
+        <a href="index.php">Portaal</a>
+        <a href="koelkast.php">Koelkast</a>
+        <a href="about-us.php">Over Mij</a>
         <a href="contact.php">Contact</a>
-        <a href="list.php">List</a>
+        <a href="list.php">Afspraak formulier</a>
     </div>
