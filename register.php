@@ -27,7 +27,7 @@ $conn->close();
 </head>
 
 <body>
-    <h1>Welkom op de webiste van Bob Vance</h1>
+    <h1>Welkom op de webiste van Fridge-shop</h1>
     <a href="login.php">Terug</a>
     <form action="" method="POST">
         Voornaam <input type="text" name="first_name" id="first_name" required>

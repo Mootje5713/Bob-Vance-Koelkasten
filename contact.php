@@ -19,13 +19,15 @@ include "header.php";
 
 ?>
 
-<h3>Voor vragen kunt uw telefoonnummer en emailadres hieronder invullen </h3>
+<h3>Voor vragen kunt uw telefoonnummer en emailadres hieronder invullen. <br>
+    Wij nemen dan snel mogelijk contact met u op.
+</h3>
 
 <div class="container">
     <form action="" method="POST">
-        telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
+        Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
         <br>
-        emailadres <input type="email" name="email" id="email" required>
+        Emailadres <input type="email" name="email" id="email" required>
         <br>
         <input type="submit" name="submit" value="Verstuur">
     </form>

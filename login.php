@@ -41,7 +41,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <h1>Welkom op de webiste van Bob Vance</h1>
+    <h1>Welkom op de webiste van Fridge-shop</h1>
     <form method="POST">
         Gebruikersnaam <input type="text" name="username" id="username" required>
         <br>

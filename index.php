@@ -16,9 +16,20 @@ if ($conn->query($query) === FALSE) {
 <?php
 include "header.php";
 ?>
+<h2>Fridge-shop</h2>
 <div class="intro">
-    <p>Op deze webiste zijn hier allerlei koelkasten te vinden.
-        Ook kan je een koelkast bestellen en laten reparen.
+    <p>
+        Op deze webiste zijn hier allerlei soorten koelkasten te vinden.
+        <br>
+        Met ook allerlei soorten vezekeringen, prijzen en energie labels.
+        <br>
+        <br>
+        Ook kunt u een koelkast bestellen en laten reparen. 
+        <br>
+        Op deze website kunt u ook lezen waarom ik deze bedrijf heb opgericht en wie ik zelf ben.
+        <br>
+        <br>
+        Veel shopplezier!
     </p>
 </div>
 
