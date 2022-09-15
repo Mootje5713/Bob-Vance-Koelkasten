@@ -24,21 +24,21 @@ $conn->close();
 include "header.php";
 ?>
 
-<h2>Mocht u een afspraak willen maken voor een reparatie dan kunt u het formulier hieronder invullen.</h2>
+<h3>Mocht u een afspraak willen maken voor een reparatie dan kunt u het formulier hieronder invullen.</h3>
 
 <form action="" method="POST">
     <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
-    datum <input type="date" name="datum" id="datum" required>
+    Datum <input type="date" name="datum" id="datum" required>
     <br>
-    adres <input type="text" name="adres" id="adres" required>
+    Adres <input type="text" name="adres" id="adres" required>
     <br>
-    postcode <input type="text" name="postcode" id="postcode" required>
+    Postcode <input type="text" name="postcode" id="postcode" required>
     <br>
-    stad <input type="text" name="stad" id="stad" required>
+    Stad <input type="text" name="stad" id="stad" required>
     <br>
-    telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
+    Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
     <br>
-    emailadres <input type="email" name="emailadres" id="emailadres" required>
+    Emailadres <input type="email" name="emailadres" id="emailadres" required>
     <br>
     <input type="submit" name="submit" value="Verstuur">
 </form>

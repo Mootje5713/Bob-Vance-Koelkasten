@@ -65,7 +65,30 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   background-color: lightgreen;
+}
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.del {
+  display: flex;
+  justify-content: space-between;
 }
 
 input[type=submit], button {
