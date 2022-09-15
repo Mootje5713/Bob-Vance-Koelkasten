@@ -8,11 +8,11 @@ if (isset($_POST['datum']) && ($_POST['adres']) && ($_POST['postcode']) && ($_PO
     $telefoonnummer = $_POST['telefoonnummer'];
     $emailadres = $_POST['emailadres'];
     $closed = $_POST['closed'];
+    $deleted = $_POST['deleted'];
     $user_id =  $_SESSION['user_id'];
-    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, closed, user_id)
-        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$closed', '$user_id')";
+    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, closed, deleted, user_id)
+        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$closed', '$deleted', '$user_id')";
     header("location: index.php");
-    echo '<script>alert("De afspraak is verstuurd we nemen zo snel mogelijk contact met u op.")</script>';
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
     }
@@ -24,7 +24,7 @@ $conn->close();
 include "header.php";
 ?>
 
-<h2>Mocht u een afspraak willen maken voor een reparatie dan kunt het formulier hieronder invullen.</h2>
+<h2>Mocht u een afspraak willen maken voor een reparatie dan kunt u het formulier hieronder invullen.</h2>
 
 <form action="" method="POST">
     <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
