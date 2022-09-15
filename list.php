@@ -8,10 +8,9 @@ if (isset($_POST['datum']) && ($_POST['adres']) && ($_POST['postcode']) && ($_PO
     $telefoonnummer = $_POST['telefoonnummer'];
     $emailadres = $_POST['emailadres'];
     $closed = $_POST['closed'];
-    $deleted = $_POST['deleted'];
     $user_id =  $_SESSION['user_id'];
-    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, closed, deleted, user_id)
-        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$closed', '$deleted', '$user_id')";
+    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, closed, user_id)
+        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$closed', '$user_id')";
     header("location: index.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;

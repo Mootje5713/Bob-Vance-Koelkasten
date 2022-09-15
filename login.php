@@ -37,18 +37,18 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bob Vance</title>
 </head>
 
 <body>
     <h1>Welkom op de webiste van Bob Vance</h1>
     <form method="POST">
-        username <input type="text" name="username" id="username" required>
+        Gebruikersnaam <input type="text" name="username" id="username" required>
         <br>
-        password <input type="password" name="password" id="password" required>
+        Wachtwoord <input type="password" name="password" id="password" required>
         <br>
         <input type="submit" name="submit" value="sign in">
-        nog geen account <a href="register.php">klik hier</a>
+        Nog geen account <a href="register.php">klik hier</a>
     </form>
 </body>
 

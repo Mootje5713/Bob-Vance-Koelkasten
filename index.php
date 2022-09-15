@@ -22,7 +22,7 @@ include "header.php";
     </p>
 </div>
 
-<h3>Uw afspraken</h3>
+<h2>Uw afspraken</h2>
 <?php
 $query = "SELECT * FROM `afspraak_formulier` WHERE user_id='" . $_SESSION["user_id"] . "' ORDER BY id DESC";
 $result = $conn->query($query);
@@ -37,7 +37,7 @@ if ($conn->query($query) === FALSE) {
 }
 ?>
 <?php if (!isset($afspraak_formulier)) :
-    echo "<h1>je hebt geen nog geen afspraken staan</h1>";
+    echo "<h3>U heeft geen afspraken open staan</h3>";
 else :
 ?>
     <?php foreach ($afspraak_formulier as $row) : ?>
