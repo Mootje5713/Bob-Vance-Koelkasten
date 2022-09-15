@@ -50,6 +50,6 @@ if (isset($_POST['submit'])) {
     <br>
     emailadress <input type="email" name="emailadres" id="emailadres" required>
     <br>
-    <button type="submit" class="btn" name="submit"> wijzig </button>
+    <button type="submit" name="submit"> wijzig </button>
 </form>
 <?php include "footer.php"; ?>
