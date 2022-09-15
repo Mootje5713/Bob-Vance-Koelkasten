@@ -38,7 +38,7 @@ include "header.php";
     <br>
     telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
     <br>
-    emailadress <input type="email" name="emailadres" id="emailadres" required>
+    emailadres <input type="email" name="emailadres" id="emailadres" required>
     <br>
     <input type="submit" name="submit" value="Verstuur">
 </form>
