@@ -47,6 +47,11 @@ p {
   justify-content: flex-start;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
 form {
     width: 50%;
     margin: 30px auto;

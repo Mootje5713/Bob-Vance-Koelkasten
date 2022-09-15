@@ -7,9 +7,10 @@ if (isset($_POST['datum']) && ($_POST['adres']) && ($_POST['postcode']) && ($_PO
     $stad =  $_POST['stad'];
     $telefoonnummer = $_POST['telefoonnummer'];
     $emailadres = $_POST['emailadres'];
+    $closed = $_POST['closed'];
     $user_id =  $_SESSION['user_id'];
-    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, user_id)
-        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$user_id')";
+    $user = "INSERT INTO `afspraak_formulier` (datum, adres, postcode, stad, telefoonnummer, emailadres, closed, user_id)
+        VALUES ('$datum', '$adres', '$postcode', '$stad', '$telefoonnummer', '$emailadres', '$closed', '$user_id')";
     header("location: index.php");
     echo '<script>alert("De afspraak is verstuurd we nemen zo snel mogelijk contact met u op.")</script>';
     if ($conn->query($user) === FALSE) {
