@@ -26,7 +26,11 @@ if (isset($_POST['username']) && ($_POST['password'])) {
     }
 }
 if (isset($_SESSION['user_id'])) {
-    header('Location: index.php');
+    if (isset($_SESSION['owner_id'])) {
+        header('Location: index.php');
+    } else {
+        header('Location: index_pb.php');
+    }
 }
 ?>
 

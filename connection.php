@@ -20,3 +20,10 @@ if (
 ) {
     header("Location: login.php");
 }
+
+
+if (strpos($_SERVER['REQUEST_URI'], '_pb') !== false) {
+    if (isset($_SESSION['owner_id'])) {
+        header("Location: index.php");
+    }
+}

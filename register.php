@@ -1,5 +1,11 @@
 <?php
 include "connection.php";
+$query = "SELECT * FROM `users` WHERE owner_id IS NULL";
+$result = $conn->query($query);
+if ($result === FALSE) {
+    echo "error" . $query . "<br />" . $conn->error;
+}
+
 if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username']) && ($_POST['email']) && ($_POST['password'])) {
     $first_name =  $_POST['first_name'];
     $last_name =  $_POST['last_name'];

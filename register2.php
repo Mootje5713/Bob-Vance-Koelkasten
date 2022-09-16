@@ -1,13 +1,12 @@
 <?php
 include "connection.php";
-if (isset($_POST['first_name']) && ($_POST['last_name']) && ($_POST['username']) && ($_POST['email']) && ($_POST['password'])) {
+
+if (isset($_POST['first_name']) && ($_POST['username']) && ($_POST['password'])) {
     $first_name =  $_POST['first_name'];
-    $last_name =  $_POST['last_name'];
     $username =  $_POST['username'];
-    $email =  $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $user = "INSERT INTO `user` (first_name, last_name, username, email, password)
-        VALUES ('$first_name', '$last_name', '$username', '$email', '$password')";
+    $user = "INSERT INTO `user` (first_name, username, password)
+        VALUES ('$first_name', '$username', '$password')";
     header("location: login.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
@@ -30,13 +29,9 @@ $conn->close();
     <h1>Welkom op de webiste van Fridge-shop</h1>
     <a href="login.php">Terug</a>
     <form action="" method="POST">
-        Voornaam <input type="text" name="first_name" id="first_name" required>
-        <br>
-        Achernaam <input type="text" name="last_name" id="last_name" required>
+        Naam <input type="text" name="first_name" id="first_name" required>
         <br>
         Gebruikersnaam <input type="text" name="username" id="username" required>
-        <br>
-        Emailadres <input type="email" name="email" id="email" required>
         <br>
         Wachtwoord <input type="password" name="password" id="password" required>
         <br>
