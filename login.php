@@ -14,6 +14,7 @@ if (isset($_POST['username']) && ($_POST['password'])) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION["user_id"] = $row['id'];
                     $_SESSION["username"] = $row['username'];
+                    $_SESSION["owner_id"] = $row["owner_id"];
                 } else {
                     echo '<script>alert("Wachtwoord niet gevonden!")</script>';
                 }
@@ -49,6 +50,7 @@ if (isset($_SESSION['user_id'])) {
         <br>
         <input type="submit" name="submit" value="sign in">
         Nog geen account <a href="register.php">klik hier</a>
+        Eigenaar? <a href="register2.php">klik hier</a>
     </form>
 </body>
 

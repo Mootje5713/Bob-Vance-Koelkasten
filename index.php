@@ -24,7 +24,7 @@ include "header.php";
         Met ook allerlei soorten vezekeringen, prijzen en energie labels.
         <br>
         <br>
-        Ook kunt u een koelkast bestellen en laten reparen. 
+        Ook kunt u een koelkast bestellen en laten reparen.
         <br>
         Op deze website kunt u ook lezen waarom ik deze bedrijf heb opgericht en wie ik zelf ben.
         <br>
@@ -33,7 +33,7 @@ include "header.php";
     </p>
 </div>
 
-<h2>Uw afspraken</h2>
+<h2>Uw afspraken overzicht</h2>
 <?php
 $query = "SELECT * FROM `afspraak_formulier` WHERE user_id='" . $_SESSION["user_id"] . "' ORDER BY id DESC";
 $result = $conn->query($query);
@@ -136,11 +136,11 @@ else :
                     <?php endif; ?>
                     <div class="del">
                         <?php if ($afspraak['closed']) : ?>
-                            <a href="deleteafspraak.php?id=<?php echo $_SESSION['user_id'] ?>">afspraak verwijderen</a>
-                            <a href="openafspraak.php?id=<?php echo $_SESSION['user_id'] ?>">afspraak openen</a>
+                            <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'"> afspraak verwijderen</button>
+                            <button onclick="window.location.href='openafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak openen</button>
                         <?php else : ?>
-                            <a href="updateafspraak.php?id=<?php echo $_SESSION['user_id'] ?>">afspraak wijzigen</a>
-                            <a href="closeafspraak.php?id=<?php echo $_SESSION['user_id'] ?>">afspraak sluiten</a>
+                            <button onclick="window.location.href='updateafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak wijzigen</button>
+                            <button onclick="window.location.href='closeafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak sluiten</button>
                         <?php endif; ?>
                     </div>
                 </table>

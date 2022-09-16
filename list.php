@@ -23,7 +23,7 @@ $conn->close();
 include "header.php";
 ?>
 
-<h3>Mocht u een afspraak willen maken voor een reparatie dan kunt u het formulier hieronder invullen.</h3>
+<h3>Mocht u een afspraak willen maken voor een reparatie dan kunt u het formulier hieronder invullen en er wordt zo snel mogelijk contact met u opgenomen.</h3>
 
 <form action="" method="POST">
     <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
