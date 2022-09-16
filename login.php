@@ -26,11 +26,7 @@ if (isset($_POST['username']) && ($_POST['password'])) {
     }
 }
 if (isset($_SESSION['user_id'])) {
-    if (isset($_SESSION['owner_id'])) {
-        header('Location: index.php');
-    } else {
-        header('Location: index_pb.php');
-    }
+    header('Location: index.php');
 }
 ?>
 
@@ -54,7 +50,6 @@ if (isset($_SESSION['user_id'])) {
         <br>
         <input type="submit" name="submit" value="sign in">
         Nog geen account <a href="register.php">klik hier</a>
-        Eigenaar? <a href="register2.php">klik hier</a>
     </form>
 </body>
 

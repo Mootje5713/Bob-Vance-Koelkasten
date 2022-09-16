@@ -1,8 +1,5 @@
 <?php
 include "connection.php";
-if (!isset($_SESSION['owner_id'])) {
-    header("Location: index_pb.php");
-}
 $query = "SELECT * FROM `afspraak_formulier` WHERE user_id=" . $_SESSION["user_id"] . "";
 $result = $conn->query($query);
 if ($conn->query($query) === FALSE) {
