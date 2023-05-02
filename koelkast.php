@@ -12,14 +12,15 @@ if ($conn->query($query) === FALSE) {
     }
 }
 
-$query = "SELECT * FROM `koelkast`";
+$query =
+"SELECT * FROM `koelkast`";
 $result = $conn->query($query);
 if ($conn->query($query) === FALSE) {
     echo "error" . $query . "<br />" . $conn->error;
 } else {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $koelkast[] = $row;
+            $koelkast = $row;
         }
     }
 }

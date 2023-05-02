@@ -10,12 +10,12 @@ if (isset($_GET['id'])) {
         header("Location: index.php");
     }
 }
+?>
 
-?>
-?>
 <?php
 include "header.php";
 ?>
+
 <?php
 include "footer.php";
 ?>

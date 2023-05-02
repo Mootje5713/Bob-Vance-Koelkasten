@@ -3,8 +3,9 @@ include "connection.php";
 if (isset($_POST['telefoonnummer']) && $_POST['email']) {
     $telefoonnummer =  $_POST['telefoonnummer'];
     $email =  $_POST['email'];
-    $user = "INSERT INTO `contact` (telefoonnummer, email)
-        VALUES ('$telefoonnummer', '$email')";
+    $contact_id =  $_SESSION['contact_id'];
+    $user = "INSERT INTO `contact` (telefoonnummer, email, contact_id)
+        VALUES ('$telefoonnummer', '$email', '$contact_id')";
     header("location: index.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
@@ -20,7 +21,7 @@ include "header.php";
 ?>
 
 <h3>Voor vragen kunt uw telefoonnummer en emailadres hieronder invullen. <br>
-    Wij nemen dan snel mogelijk contact met u op.
+    Wij nemen dan zo snel mogelijk contact met u op.
 </h3>
 
 <div class="container">

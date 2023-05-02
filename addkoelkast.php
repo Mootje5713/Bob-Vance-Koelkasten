@@ -6,8 +6,9 @@ if (isset($_POST['prijs']) && ($_POST['vezekering']) && ($_POST['labels']) && ($
     $labels =  $_POST['labels'];
     $beschrijving =  $_POST['beschrijving'];
     $image = $_POST['image'];
-    $user = "INSERT INTO `koelkast` (prijs, vezekering, labels, beschrijving, image)
-        VALUES ('$prijs', '$vezekering', '$labels', '$beschrijving', '$image')";
+    $owner_id =  $_SESSION['owner_id'];
+    $user = "INSERT INTO `koelkast` (prijs, vezekering, labels, beschrijving, image, owner_id)
+        VALUES ('$prijs', '$vezekering', '$labels', '$beschrijving', '$image', '$owner_id')";
     header("location: koelkast.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
@@ -18,8 +19,6 @@ if (isset($_POST['prijs']) && ($_POST['vezekering']) && ($_POST['labels']) && ($
 <?php
 include "header.php";
 ?>
-
-
 
 <div class="container">
     <form action="" method="POST">
