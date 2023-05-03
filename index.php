@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$query = "SELECT * FROM `afspraak_formulier` WHERE user_id=" . $_SESSION["user_id"] . "";
+$query = "SELECT * FROM `afspraak_formulier` WHERE id";
 $result = $conn->query($query);
 if ($conn->query($query) === FALSE) {
     echo "error" . $query . "<br />" . $conn->error;
@@ -47,7 +47,7 @@ if ($conn->query($query) === FALSE) {
     }
 }
 ?>
-<?php if (!isset($afspraak_formulier)) :
+<?php if (!$afspraak_formulier) :
     echo "<h3>U heeft geen afspraken open staan</h3>";
 else :
 ?>
@@ -56,45 +56,6 @@ else :
             <li>
                 <table>
                     <?php if ($afspraak['closed']) : ?>
-                        <tr>
-                            <th>
-                                datum
-                            </th>
-                            <th>
-                                adres
-                            </th>
-                            <th>
-                                postcode
-                            </th>
-                            <th>
-                                stad
-                            </th>
-                            <th>
-                                telefoonnummer
-                            </th>
-                            <th>
-                                emailadres
-                            </th>
-                        </tr>
-                        <td>
-                            <h3><s><?php echo $row['datum'] ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['adres'] ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['postcode'] ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['stad'] ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['telefoonnummer'] ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['emailadres'] ?></s></h3>
-                        </td>
-                    <?php else : ?>
                         <tr>
                             <th>
                                 Datum
@@ -133,14 +94,53 @@ else :
                         <td>
                             <h3><?php echo $row['emailadres'] ?></h3>
                         </td>
+                    <?php else : ?>
+                        <tr>
+                            <th>
+                                Datum
+                            </th>
+                            <th>
+                                Adres
+                            </th>
+                            <th>
+                                Postcode
+                            </th>
+                            <th>
+                                Stad
+                            </th>
+                            <th>
+                                Telefoonnummer
+                            </th>
+                            <th>
+                                Emailadres
+                            </th>
+                        </tr>
+                        <td>
+                            <h3><s><?php echo $row['datum'] ?></s></h3>
+                        </td>
+                        <td>
+                            <h3><s><?php echo $row['adres'] ?></s></h3>
+                        </td>
+                        <td>
+                            <h3><s><?php echo $row['postcode'] ?></s></h3>
+                        </td>
+                        <td>
+                            <h3><s><?php echo $row['stad'] ?></s></h3>
+                        </td>
+                        <td>
+                            <h3><s><?php echo $row['telefoonnummer'] ?></s></h3>
+                        </td>
+                        <td>
+                            <h3><s><?php echo $row['emailadres'] ?></s></h3>
+                        </td>
                     <?php endif; ?>
                     <div class="del">
-                        <?php if ($afspraak['closed']) : ?>
-                            <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'"> afspraak verwijderen</button>
-                            <button onclick="window.location.href='openafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak openen</button>
+                        <?php if (!$afspraak['closed']) : ?>
+                            <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'"> Afspraak verwijderen</button>
+                            <button onclick="window.location.href='closeafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">Afspraak openen</button>
                         <?php else : ?>
-                            <button onclick="window.location.href='updateafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak wijzigen</button>
-                            <button onclick="window.location.href='closeafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">afspraak sluiten</button>
+                            <button onclick="window.location.href='updateafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">Afspraak wijzigen</button>
+                            <button onclick="window.location.href='openafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">Afspraak sluiten</button>
                         <?php endif; ?>
                     </div>
                 </table>

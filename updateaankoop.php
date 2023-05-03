@@ -3,7 +3,8 @@
 include "connection.php";
 
 if (isset($_GET['id'])) {
-    $query = "SELECT * FROM `koelkast`";
+    $user_id = $_SESSION['user_id'];
+    $query = "SELECT * FROM `koelkast` WHERE user_id= '".$_SESSION['user_id']."'";
     $result = $conn->query($query);
     if ($result === FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
@@ -18,11 +19,12 @@ if (isset($_GET['id'])) {
 
 if (isset($_POST['submit'])) {
     $prijs = $_POST['prijs'];
-    $vezekering = $_POST['vezekering'];
+    $verzekering = $_POST['verzekering'];
     $labels = $_POST['labels'];
     $beschrijving = $_POST['beschrijving'];
     $image = $_POST['image'];
-    $query = "UPDATE koelkast SET prijs = '$prijs', vezekering = '$vezekering', labels = '$labels', beschrijving = '$beschrijving', image = '$image', emailadres = '$emailadres'";
+    $user_id = $_SESSION['user_id'];
+    $query = "UPDATE `koelkast` SET `prijs`= $prijs, `verzekering`= '$verzekering', `labels`= '$labels', `beschrijving`= '$beschrijving', `image`= '$image'";
     $result = $conn->query($query);
     if ($result === FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
@@ -31,20 +33,22 @@ if (isset($_POST['submit'])) {
     }
 }
 
+
+
 ?>
 
 <?php include "header.php"; ?>
-<form method="POST">
-    Prijs <input type="number" name="prijs" id="prijs" required>
+<form action="" method="POST">
+    Prijs <input type="number" name="prijs" id="prijs">
     <br>
-    Vezekering <input type="text" name="vezekering" id="vezekering" required>
+    Verzekering <input type="text" name="verzekering" id="verzekering">
     <br>
-    Labels <input type="text" name="labels" id="labels" required>
+    Labels <input type="text" name="labels" id="labels">
     <br>
-    Beschrijving <input type="text" name="beschrijving" id="beschrijving" required>
+    Beschrijving <input type="text" name="beschrijving" id="beschrijving">
     <br>
-    Afbeelding <input type="file" name="image" id="image" required>
+    Afbeelding <input type="file" name="image" id="image">
     <br>
-    <button type="submit" name="submit"> wijzig </button>
+    <button type="submit" name="submit">Wijzig</button>
 </form>
 <?php include "footer.php"; ?>

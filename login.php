@@ -14,8 +14,6 @@ if (isset($_POST['username']) && ($_POST['password'])) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION["user_id"] = $row['id'];
                     $_SESSION["username"] = $row['username'];
-                    $_SESSION["owner_id"] = $row["owner_id"];
-                    $_SESSION["contact_id"] = $row["contact_id"];
                 } else {
                     echo '<script>alert("Wachtwoord niet gevonden!")</script>';
                 }

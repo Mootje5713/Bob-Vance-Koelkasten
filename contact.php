@@ -3,9 +3,9 @@ include "connection.php";
 if (isset($_POST['telefoonnummer']) && $_POST['email']) {
     $telefoonnummer =  $_POST['telefoonnummer'];
     $email =  $_POST['email'];
-    $contact_id =  $_SESSION['contact_id'];
-    $user = "INSERT INTO `contact` (telefoonnummer, email, contact_id)
-        VALUES ('$telefoonnummer', '$email', '$contact_id')";
+    $user_id =  $_SESSION['user_id'];
+    $user = "INSERT INTO `contact` (telefoonnummer, email, user_id)
+        VALUES ('$telefoonnummer', '$email', '$user_id')";
     header("location: index.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
@@ -26,6 +26,7 @@ include "header.php";
 
 <div class="container">
     <form action="" method="POST">
+        <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
         Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
         <br>
         Emailadres <input type="email" name="email" id="email" required>

@@ -1,19 +1,21 @@
 <?php
 include "connection.php";
-if (isset($_POST['prijs']) && ($_POST['vezekering']) && ($_POST['labels']) && ($_POST['beschrijving']) && ($_POST['image'])) {
+if (isset($_POST['prijs']) && ($_POST['verzekering']) && ($_POST['labels']) && ($_POST['beschrijving']) && ($_POST['image'])) {
     $prijs =  $_POST['prijs'];
-    $vezekering =  $_POST['vezekering'];
+    $verzekering =  $_POST['verzekering'];
     $labels =  $_POST['labels'];
     $beschrijving =  $_POST['beschrijving'];
     $image = $_POST['image'];
-    $owner_id =  $_SESSION['owner_id'];
-    $user = "INSERT INTO `koelkast` (prijs, vezekering, labels, beschrijving, image, owner_id)
-        VALUES ('$prijs', '$vezekering', '$labels', '$beschrijving', '$image', '$owner_id')";
+    $closed = $_POST['closed'];
+    $user_id =  $_SESSION['user_id'];
+    $user = "INSERT INTO `koelkast` (prijs, verzekering, labels, beschrijving, image, closed, user_id)
+        VALUES ('$prijs', '$verzekering', '$labels', '$beschrijving', '$image', '$closed', '$user_id')";
     header("location: koelkast.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
     }
 }
+$conn->close();
 ?>
 
 <?php
@@ -22,9 +24,10 @@ include "header.php";
 
 <div class="container">
     <form action="" method="POST">
+        <input type="hidden" value="<?php echo $_SESSION['user_id']; ?>">
         Prijs <input type="number" name="prijs" id="prijs" required>
         <br>
-        Vezekering <input type="text" name="vezekering" id="vezekering" required>
+        Verzekering <input type="text" name="verzekering" id="verzekering" required>
         <br>
         Labels <input type="text" name="labels" id="labels" required>
         <br>
