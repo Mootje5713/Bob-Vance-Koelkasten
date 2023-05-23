@@ -3,8 +3,7 @@
 include "connection.php";
 
 if (isset($_GET['id'])) {
-    $user_id = $_SESSION['user_id'];
-    $query = "SELECT * FROM `koelkast` WHERE user_id= '".$_SESSION['user_id']."'";
+    $query = "SELECT * FROM `koelkast` WHERE user_id ='" . $_SESSION["user_id"] . "'";
     $result = $conn->query($query);
     if ($result === FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
@@ -18,6 +17,7 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_POST['submit'])) {
+    $id = $_POST['id'];
     $prijs = $_POST['prijs'];
     $verzekering = $_POST['verzekering'];
     $labels = $_POST['labels'];
@@ -32,14 +32,12 @@ if (isset($_POST['submit'])) {
         header("Location: koelkast.php");
     }
 }
-
-
-
 ?>
 
 <?php include "header.php"; ?>
 <form action="" method="POST">
-    Prijs <input type="number" name="prijs" id="prijs">
+    <input type="hidden" name="id" value="<?php echo $id; ?>">
+    Prijs <input type="number" name="prijs" id="prijs" value="<?php echo $prijs; ?>">
     <br>
     Verzekering <input type="text" name="verzekering" id="verzekering">
     <br>

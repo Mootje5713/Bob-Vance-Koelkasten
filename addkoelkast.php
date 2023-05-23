@@ -6,10 +6,9 @@ if (isset($_POST['prijs']) && ($_POST['verzekering']) && ($_POST['labels']) && (
     $labels =  $_POST['labels'];
     $beschrijving =  $_POST['beschrijving'];
     $image = $_POST['image'];
-    $closed = $_POST['closed'];
     $user_id =  $_SESSION['user_id'];
-    $user = "INSERT INTO `koelkast` (prijs, verzekering, labels, beschrijving, image, closed, user_id)
-        VALUES ('$prijs', '$verzekering', '$labels', '$beschrijving', '$image', '$closed', '$user_id')";
+    $user = "INSERT INTO `koelkast` (prijs, verzekering, labels, beschrijving, image, user_id)
+        VALUES ('$prijs', '$verzekering', '$labels', '$beschrijving', '$image', '$user_id')";
     header("location: koelkast.php");
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
