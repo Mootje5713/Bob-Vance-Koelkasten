@@ -2,7 +2,7 @@
 include "connection.php";
 
 if (isset($_POST['submit'])) {
-    $id = $_POST['id'];
+    $id = $_GET['id'];
     $query = "DELETE FROM `koelkast` WHERE id = $id";
     if ($conn->query($query) === TRUE) {
         echo "error" . $query . "<br />" . $conn->error;

@@ -26,7 +26,6 @@ else :
         <ul>
             <li>
                 <table>
-                    <?php if (!$row['closed']) : ?>
                         <tr>
                             <th>
                                 Prijs
@@ -59,48 +58,9 @@ else :
                         <td>
                             <h3><?php echo "<img src='{$row['image']}' width=100px height=100px'>"; ?> </h3>
                         </td>
-                    <?php else : ?>
-                        <tr>
-                            <th>
-                                Prijs
-                            </th>
-                            <th>
-                                Verzekering
-                            </th>
-                            <th>
-                                Labels
-                            </th>
-                            <th>
-                                Beschrijving
-                            </th>
-                            <th>
-                                Afbeelding
-                            </th>
-                        </tr>
-                        <td>
-                            <h3><s><?php echo $row['prijs']; ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['verzekering']; ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['labels']; ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><s><?php echo $row['beschrijving']; ?></s></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo "<img src='{$row['image']}' width=100px height=100px'>"; ?></h3>
-                        </td>
-                    <?php endif; ?>
                     <div class="del">
-                        <?php if (!$row['closed']) : ?>
                             <button onclick="window.location.href='updateaankoop.php?id=<?php echo $_SESSION['user_id']; ?>'">Aankoop wijzigen</button>
-                            <button onclick="window.location.href='closeaankoop.php?id=<?php echo $_SESSION['user_id']; ?>'">Aankoop sluiten</button>
-                        <?php else : ?>
                             <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteaankoop.php?id=<?php echo $_SESSION['user_id']; ?>'"> Aankoop verwijderen</button>
-                            <button onclick="window.location.href='openaankoop.php?id=<?php echo $_SESSION['user_id']; ?>'">Aankoop openen</button>
-                        <?php endif; ?>
                     </div>
                 </table>
             </li>
