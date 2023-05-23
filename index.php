@@ -42,47 +42,47 @@ else :
         <ul>
             <li>
                 <table>
-                        <tr>
-                            <th>
-                                Datum
-                            </th>
-                            <th>
-                                Adres
-                            </th>
-                            <th>
-                                Postcode
-                            </th>
-                            <th>
-                                Stad
-                            </th>
-                            <th>
-                                Telefoonnummer
-                            </th>
-                            <th>
-                                Emailadres
-                            </th>
-                        </tr>
-                        <td>
-                            <h3><?php echo $row['datum'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $row['adres'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $row['postcode'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $row['stad'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $row['telefoonnummer'] ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $row['emailadres'] ?></h3>
-                        </td>
+                    <tr>
+                        <th>
+                            Datum
+                        </th>
+                        <th>
+                            Adres
+                        </th>
+                        <th>
+                            Postcode
+                        </th>
+                        <th>
+                            Stad
+                        </th>
+                        <th>
+                            Telefoonnummer
+                        </th>
+                        <th>
+                            Emailadres
+                        </th>
+                    </tr>
+                    <td>
+                        <h3><?php echo $row['datum'] ?></h3>
+                    </td>
+                    <td>
+                        <h3><?php echo $row['adres'] ?></h3>
+                    </td>
+                    <td>
+                        <h3><?php echo $row['postcode'] ?></h3>
+                    </td>
+                    <td>
+                        <h3><?php echo $row['stad'] ?></h3>
+                    </td>
+                    <td>
+                        <h3><?php echo $row['telefoonnummer'] ?></h3>
+                    </td>
+                    <td>
+                        <h3><?php echo $row['emailadres'] ?></h3>
+                    </td>
                     <div class="del">
-                            <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'"> Afspraak verwijderen</button>
-                            <button onclick="window.location.href='updateafspraak.php?id=<?php echo $_SESSION['user_id']; ?>'">Afspraak wijzigen</button>
+                        <button onclick="if(confirm('Weet u het zeker?'))window.location.href='deleteafspraak.php?id=<?php echo $row['id']; ?>'"> Afspraak verwijderen</button>
+                        <button onclick="window.location.href='updateafspraak.php?id=<?php echo $row['id']; ?>'">Afspraak wijzigen</button>
                     </div>
                 </table>
             </li>

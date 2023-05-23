@@ -1,10 +1,10 @@
 <?php
 include "connection.php";
 
-if (isset($_POST['submit'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = "DELETE FROM `koelkast` WHERE id = $id";
-    if ($conn->query($query) === TRUE) {
+    $query = "DELETE FROM koelkast WHERE id = '$id'"; 
+    if ($conn->query($query) ===  FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
     } else {
         header("Location: koelkast.php");
@@ -14,11 +14,6 @@ if (isset($_POST['submit'])) {
 <?php
 include "header.php";
 ?>
-
-<form action="" method="POST">
-    <input type="hidden" name="id">
-    <input type="submit" name="submit" value="Aankoop verwijderen">
-</form>
 
 <?php
 include "footer.php";
