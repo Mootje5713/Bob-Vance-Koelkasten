@@ -23,7 +23,7 @@ include "header.php";
 
 <div class="container">
     <form action="" method="POST">
-        <input type="hidden" value="<?php echo $_SESSION['gebruikersnaam']; ?>">
+        <input type="hidden" value="<?php echo $_SESSION['username']; ?>">
         Prijs <input type="number" name="prijs" id="prijs" required>
         <br>
         Verzekering <input type="text" name="verzekering" id="verzekering" required>

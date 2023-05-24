@@ -1,12 +1,14 @@
 <?php
 include "connection.php";
-if (isset($_POST['telefoonnummer']) && $_POST['email']) {
+if (isset($_POST['telefoonnummer']) && $_POST['email'] && $_POST['vraag']) {
     $telefoonnummer =  $_POST['telefoonnummer'];
     $email =  $_POST['email'];
+    $vraag =  $_POST['vraag'];
     $user_id =  $_SESSION['user_id'];
-    $user = "INSERT INTO `contact` (telefoonnummer, email, user_id)
-        VALUES ('$telefoonnummer', '$email', '$user_id')";
-    header("location: index.php");
+    $user = "INSERT INTO `contact` (telefoonnummer, email, vraag, user_id)
+        VALUES ('$telefoonnummer', '$email', '$vraag', '$user_id')";
+    header("location: contact.php");
+    echo '<script>alert("Message")</script>';
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
     }
@@ -30,6 +32,7 @@ include "header.php";
         Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" required>
         <br>
         Emailadres <input type="email" name="email" id="email" required>
+        <label>Vraag<textarea name="vraag" id="vraag" rows="5" cols="50"></textarea></label>
         <br>
         <input type="submit" name="submit" value="Verstuur">
     </form>
