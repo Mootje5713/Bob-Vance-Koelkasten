@@ -67,8 +67,6 @@ include "header.php";
     <h3>U heeft geen aankopen</h3>
 <?php endif; ?>
 
-
-
 <?php
 include "footer.php";
 ?>

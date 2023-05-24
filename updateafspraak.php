@@ -3,7 +3,8 @@
 include "connection.php";
 
 if (isset($_GET['id'])) {
-    $query = "SELECT * FROM `afspraak_formulier` WHERE user_id ='" . $_GET["id"] . "'";
+    $id = $_GET['id'];
+    $query = "SELECT * FROM `afspraak_formulier` WHERE id =$id ";
     $result = $conn->query($query);
     if ($result === FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
@@ -11,6 +12,13 @@ if (isset($_GET['id'])) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $afspraak_formulier[] = $row;
+                $datum = $row['datum'];
+                $adres = $row['adres'];
+                $postcode = $row['postcode'];
+                $stad = $row['stad'];
+                $telefoonnummer = $row['telefoonnummer'];
+                $emailadres = $row['emailadres'];
+                $user_id = $_SESSION['user_id'];
             }
         }
     }
@@ -24,7 +32,7 @@ if (isset($_POST['submit'])) {
     $telefoonnummer = $_POST['telefoonnummer'];
     $emailadres = $_POST['emailadres'];
     $user_id = $_SESSION['user_id'];
-    $query = "UPDATE afspraak_formulier SET datum = '$datum', adres = '$adres', postcode = '$postcode', stad = '$stad', telefoonnummer = '$telefoonnummer', emailadres = '$emailadres'";
+    $query = "UPDATE afspraak_formulier SET datum = '$datum', adres = '$adres', postcode = '$postcode', stad = '$stad', telefoonnummer = '$telefoonnummer', emailadres = '$emailadres' WHERE id = $id";
     $result = $conn->query($query);
     if ($result === FALSE) {
         echo "error" . $query . "<br />" . $conn->error;
@@ -37,17 +45,17 @@ if (isset($_POST['submit'])) {
 
 <?php include "header.php"; ?>
 <form action="" method="POST">
-    Datum <input type="date" name="datum" id="datum">
+    Datum <input type="date" name="datum" id="datum" value="<?php echo $datum; ?>">
     <br>
-    Adres <input type="text" name="adres" id="adres">
+    Adres <input type="text" name="adres" id="adres" value="<?php echo $adres; ?>">
     <br>
-    Postcode <input type="text" name="postcode" id="postcode">
+    Postcode <input type="text" name="postcode" id="postcode" value="<?php echo $datum; ?>">
     <br>
-    Stad <input type="text" name="stad" id="stad">
+    Stad <input type="text" name="stad" id="stad" value="<?php echo $stad; ?>">
     <br>
-    Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer">
+    Telefoonnummer <input type="number" name="telefoonnummer" id="telefoonnummer" value="<?php echo $telefoonnummer; ?>">
     <br>
-    Emailadres <input type="email" name="emailadres" id="emailadres">
+    Emailadres <input type="email" name="emailadres" id="emailadres" value="<?php echo $emailadres; ?>">
     <br>
     <button type="submit" name="submit"> Wijzig </button>
 </form>

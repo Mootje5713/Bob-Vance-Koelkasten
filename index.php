@@ -17,27 +17,21 @@ if ($conn->query($query) === FALSE) {
 include "header.php";
 ?>
 <h2>Fridge-shop</h2>
-<div class="intro">
-    <p>
-        Op deze webiste zijn hier allerlei soorten koelkasten te vinden.
-        <br>
-        Met ook allerlei soorten vezekeringen, prijzen en energie labels.
-        <br>
-        <br>
-        Ook kunt u een koelkast bestellen en laten reparen.
-        <br>
-        Op deze website kunt u ook lezen waarom ik deze bedrijf heb opgericht en wie ik zelf ben.
-        <br>
-        <br>
-        Veel shopplezier!
-    </p>
-</div>
+<p class="intro">
+    Op deze webiste zijn hier allerlei soorten koelkasten te vinden.
+    <br>
+    Met ook allerlei soorten vezekeringen, prijzen en energie labels.
+    <br>
+    <br>
+    Ook kunt u een koelkast bestellen en laten reparen.
+    <br>
+    Op deze website kunt u ook lezen waarom ik deze bedrijf heb opgericht en wie ik zelf ben.
+    <br>
+    Veel shopplezier!
+</p>
 
 <h2>Uw afspraken overzicht</h2>
-<?php if (!$afspraak_formulier) :
-    echo "<h3>U heeft geen afspraken open staan</h3>";
-else :
-?>
+<?php if (isset($afspraak_formulier) && !empty($afspraak_formulier)) : ?>
     <?php foreach ($afspraak_formulier as $row) : ?>
         <ul>
             <li>
@@ -88,7 +82,10 @@ else :
             </li>
         </ul>
     <?php endforeach; ?>
+<?php else : ?>
+    <h3>U heeft geen afspraken open staan</h3>
 <?php endif; ?>
+
 <?php
 include "footer.php";
 ?>

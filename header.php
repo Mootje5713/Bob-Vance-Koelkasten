@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    <p>Hallo! <?php echo $_SESSION['username']; ?> &nbsp; <a href="logout.php">logout</a></p>
-    <b>Fridge-shop</b>
-    <h1>Welkom op de webiste van Fride-shop</h1>
+    <p>Welkom! <?php echo $_SESSION['username']; ?> &nbsp; <a href="logout.php">logout</a></p>
+    <h1>Fride-shop</h1>
     <div class="topnav">
         <a href="index.php">Portaal</a>
         <a href="koelkast.php">Koelkasten</a>
