@@ -7,8 +7,7 @@ if (isset($_POST['telefoonnummer']) && $_POST['email'] && $_POST['vraag']) {
     $user_id =  $_SESSION['user_id'];
     $user = "INSERT INTO `contact` (telefoonnummer, email, vraag, user_id)
         VALUES ('$telefoonnummer', '$email', '$vraag', '$user_id')";
-    header("location: contact.php");
-    echo '<script>alert("Message")</script>';
+    echo '<script>alert("Je gegevens zijn verstuurt en we nemen zo snel mogelijk contact met je op!")</script>';
     if ($conn->query($user) === FALSE) {
         echo "error" . $user . "<br />" . $conn->error;
     }

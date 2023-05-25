@@ -18,11 +18,11 @@ include "header.php";
     Ook haal ik er me passie eruit en vind ik het ook leuk om te zien dat klanten tevereden weg gaan met de koelkast die zijn in gedachten hadden.
 </p>
 
-<h2>Waarom moet u bij een koelkast kopen?</h2>
+<h2>Waarom moet u bij mij een koelkast kopen?</h2>
 <p>
-    Mijn koelkasten zijn betrouw en gaan heel lang mee. Ze zijn zeker geen 2e hands of gebruikt door iemand anders. Ik zorg er zelf persoonlijk voor dat de koelkasten op tijd geleverd worden na aanbetaling van een besteling. Ook geef ik een garantie van 7 jaar voor het geval de koelkast het niet meer doet. 
-    Dan kan de klant zelf kiezen of hij een nieuwe wilt, 
-    of dat de huidge koelkast gerepareerd wordt, 
+    Mijn koelkasten zijn betrouw en gaan heel lang mee. Ze zijn zeker geen 2e hands of gebruikt door iemand anders. Ik zorg er zelf persoonlijk voor dat de koelkasten op tijd geleverd worden na aanbetaling van een besteling. Ook geef ik een garantie van 7 jaar voor het geval de koelkast het niet meer doet.
+    Dan kan de klant zelf kiezen of hij een nieuwe wilt,
+    of dat de huidge koelkast gerepareerd wordt,
     of dat de klant z'n geld terug wilt.
 </p>
 
