@@ -1,3 +1,6 @@
+<!-- This is a PHP code that starts a session, connects to a MySQL database, and checks if the user is
+logged in. If the user is not logged in and is not on the login or register page, the code redirects
+them to the login page. -->
 <?php
 session_start();
 $servername = "localhost";

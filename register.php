@@ -1,3 +1,7 @@
+<!-- This is a PHP code block that handles the form submission from the sign-up page. It checks if all
+required fields are set, retrieves the values from the form, hashes the password, and inserts the
+user data into the database. If there is an error with the database query, it will display an error
+message. Finally, it closes the database connection. -->
 <?php
 include "connection.php";
 

@@ -1,3 +1,8 @@
+<!-- This is a PHP code that inserts data into a MySQL database table named "koelkast". It first checks
+if the required form fields (prijs, verzekering, labels, beschrijving, and image) are set using the
+isset() function. If they are set, it retrieves the values of these fields using the 
+superglobal array and assigns them to variables. It also retrieves the user ID from the session
+variable ['user_id'] and assigns it to the  variable. -->
 <?php
 include "connection.php";
 if (isset($_POST['prijs']) && ($_POST['verzekering']) && ($_POST['labels']) && ($_POST['beschrijving']) && ($_POST['image'])) {

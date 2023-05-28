@@ -1,3 +1,8 @@
+<!-- This PHP code is inserting form data submitted by the user into a MySQL database table named
+`afspraak_formulier`. It first checks if all the required form fields are set, then assigns their
+values to variables. It then constructs an SQL query to insert these values into the table. If the
+query execution fails, it displays an error message. Finally, it closes the database connection. */
+-->
 <?php
 include "connection.php";
 if (isset($_POST['datum']) && ($_POST['adres']) && ($_POST['postcode']) && ($_POST['stad']) && ($_POST['telefoonnummer']) && ($_POST['emailadres'])) {

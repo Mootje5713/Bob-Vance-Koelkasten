@@ -1,3 +1,12 @@
+<!-- This PHP code is retrieving data from a MySQL database table called "koelkast" for the current user,
+ordering it by ID in descending order, and storing it in an array called "". It first
+includes the "connection.php" file to establish a connection to the database. Then, it creates a SQL
+query to select all columns from the "koelkast" table where the user_id matches the current user's
+ID, orders the results by ID in descending order, and executes the query using the  object. If
+the query fails, it displays an error message. If the query succeeds and returns one or more rows,
+it loops through each row and adds it to the  array. Finally, the code checks if the
+array is not empty and displays the purchase details in a table format if it is not
+empty. -->
 <?php
 include "connection.php";
 $query = "SELECT * FROM `koelkast` WHERE user_id='" . $_SESSION["user_id"] . "' ORDER BY id DESC";
@@ -17,6 +26,13 @@ if ($conn->query($query) === FALSE) {
 include "header.php";
 ?>
 
+<!-- This is a PHP code that displays a list of purchases made by a user. It first retrieves the data
+from the database table "koelkast" for the current user, orders it by ID in descending order, and
+stores it in an array called . Then, it checks if the array is not empty and loops
+through each item in the array to display the purchase details in a table format. The details
+include the price, insurance, labels, description, and image of the purchased item. It also provides
+buttons to edit or delete the purchase. If the array is empty, it displays a message saying that the
+user has no purchases. -->
 <h2>Uw aankoop overzicht</h2>
 <?php if (isset($koelkasten) && !empty($koelkasten)) : ?>
     <?php foreach ($koelkasten as $row) : ?>

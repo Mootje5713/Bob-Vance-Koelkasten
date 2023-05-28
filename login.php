@@ -1,3 +1,9 @@
+<!-- This is a PHP code that handles the login functionality of a website. It checks if the username and
+password are set in the POST request, then queries the database to check if the username exists. If
+the username exists, it checks if the password matches the hashed password stored in the database
+using the password_verify() function. If the password is correct, it sets the user_id and username
+in the session and redirects the user to the index.php page. If the username or password is
+incorrect, it displays an error message using JavaScript alert(). -->
 <?php
 include "connection.php";
 if (isset($_POST['username']) && ($_POST['password'])) {

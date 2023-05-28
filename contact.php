@@ -1,3 +1,9 @@
+<!-- This PHP code is inserting user's contact information (telephone number, email, and question) into a
+database table named `contact`. It first checks if the form fields are set and not empty, then
+assigns their values to variables. It also gets the user ID from the session and includes it in the
+SQL query. After executing the query, it displays a success message using JavaScript. If there is an
+error in executing the query, it displays an error message. Finally, it closes the database
+connection. -->
 <?php
 include "connection.php";
 if (isset($_POST['telefoonnummer']) && $_POST['email'] && $_POST['vraag']) {

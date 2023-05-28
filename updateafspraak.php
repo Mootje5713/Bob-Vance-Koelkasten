@@ -1,3 +1,8 @@
+<!-- This is a PHP code that retrieves data from a database table called `afspraak_formulier` based on
+the `id` parameter passed through the URL using the GET method. It then displays the retrieved data
+in a form for editing. When the form is submitted, it updates the corresponding record in the
+database table with the new values entered in the form. If the update is successful, it redirects
+the user to the `index.php` page. -->
 <?php
 
 include "connection.php";

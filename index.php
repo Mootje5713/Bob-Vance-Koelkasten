@@ -1,3 +1,8 @@
+<!-- This code is selecting all the rows from the `afspraak_formulier` table where the `user_id` column
+matches the current user's session ID, and ordering the results by the `id` column in descending
+order. It then stores the results in an array called ``. If there is an error in
+the query, it will display an error message. -->
+
 <?php
 include "connection.php";
 $query = "SELECT * FROM `afspraak_formulier` WHERE user_id='" . $_SESSION["user_id"] . "' ORDER BY id DESC";
@@ -13,6 +18,13 @@ if ($conn->query($query) === FALSE) {
 }
 ?>
 
+<!-- This is a PHP code that displays a list of appointments for the current user. It first selects all
+the rows from the `afspraak_formulier` table where the `user_id` column matches the current user's
+session ID, and orders the results by the `id` column in descending order. It then stores the
+results in an array called ``. If there are appointments in the array, it
+displays them in a table with columns for date, address, postcode, city, phone number, and email
+address. It also provides buttons to delete or update each appointment. If there are no appointments
+in the array, it displays a message saying that there are no appointments open. -->
 <?php
 include "header.php";
 ?>
@@ -30,6 +42,12 @@ include "header.php";
     Veel shopplezier!
 </p>
 
+<!-- This code is displaying a list of appointments for the current user. It first checks if the
+`` array is set and not empty. If it is, it loops through each appointment in the
+array and displays it in a table with columns for date, address, postcode, city, phone number, and
+email address. It also provides buttons to delete or update each appointment. If there are no
+appointments in the array, it displays a message saying that there are no appointments open. */
+-->
 <h2>Uw afspraken overzicht</h2>
 <?php if (isset($afspraak_formulier) && !empty($afspraak_formulier)) : ?>
     <?php foreach ($afspraak_formulier as $row) : ?>

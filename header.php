@@ -15,8 +15,8 @@
     <div class="topnav">
         <a href="index.php">Portaal</a>
         <a href="koelkast.php">Koelkasten</a>
+        <a href="addkoelkast.php">Voeg een koelkast toe</a>
+        <a href="list.php">Reparatie inplannen</a>
         <a href="over-mij.php">Over Mij</a>
         <a href="contact.php">Contact</a>
-        <a href="addkoelkast.php">Voeg een koelkast toe</a>
-        <a href="list.php">Reparatie</a>
     </div>

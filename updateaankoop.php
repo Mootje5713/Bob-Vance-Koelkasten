@@ -1,3 +1,8 @@
+<!-- This is a PHP code that retrieves data from a database table called "koelkast" based on the ID
+passed through the URL parameter (['id']). It then displays the retrieved data in a form with
+input fields for editing. When the form is submitted, the updated data is sent to the database to
+update the corresponding record using an SQL UPDATE query. If the query is successful, the user is
+redirected to the "koelkast.php" page. -->
 <?php
 
 include "connection.php";
